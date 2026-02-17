@@ -26,21 +26,21 @@ This example gets the FRP non-stop from 2025-07-15T12:30:00+01:00 forward, as no
         run Launch_me_to_get_FRP.py --north 40.8 --south 40.7 --east -7.8 --west -7.95 --start 2025-07-15T12:30:00+01:00
 
 # ⚠️ WARNINGS
-    The directory must contain a ".credentials.ini" file with your credentials to log in into Gitlab.
-    This file must follow the next structure:
+The directory must contain a ".credentials.ini" file with your credentials to log in into Gitlab.
+This file must follow the next structure:
         
       [gitlab]
       username = username@example.org
       password = MyPa5sWoRd
 
-    This repository sets quotas and limitations for the downloads, and you could be temporally blocked after a few unsuccessful pushes (for instance, trying to retrieve FRP data that is not avaialable yet, with a too low --waiting-time). If you plan to use this tool for operational purposes, we strongly recommend you to have a backup user/password.
+This repository sets quotas and limitations for the downloads, and you could be temporally blocked after a few unsuccessful pushes (for instance, trying to retrieve FRP data that is not avaialable yet, with a too low --waiting-time). If you plan to use this tool for operational purposes, we strongly recommend you to have a backup user/password.
     
-    Note that FRP from MTG is in its demonstration phase, and is thus not fully operational (See "https://lsa-saf.eumetsat.int/en/data/products/fire-products/").
-    Note that the FRP product is available since 20250101. If your request starts prior to that date, you will get an error.
-    Note that due to its spatial resolution, perimeters estimated through FRP from MTG are wider than real. Make sure that your bbox is not too narrow.
-    Note that the spatial coverage of MTG includes Europe, Africa and South America.
+Note that FRP from MTG is in its demonstration phase, and is thus not fully operational (See "https://lsa-saf.eumetsat.int/en/data/products/fire-products/").
+Note that the FRP product is available since 20250101. If your request starts prior to that date, you will get an error.
+Note that due to its spatial resolution, perimeters estimated through FRP from MTG are wider than real. Make sure that your bbox is not too narrow.
+Note that the spatial coverage of MTG includes Europe, Africa and South America.
     
-    If you define a name that already exists, the results will be attached to the end of the previously generated file, corrupting it.
+If you define a name that already exists, the results will be attached to the end of the previously generated file, corrupting it.
     
 ## Requirements:
 
