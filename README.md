@@ -43,7 +43,6 @@ Note that the spatial coverage of MTG includes Europe, Africa and South America.
 If you define a name that already exists, the results will be attached to the end of the previously generated file, corrupting it.
     
 ## Requirements:
-
 Python 3.12.9 with:
   - datetime
   - pathlib
