@@ -33,7 +33,7 @@ This file must follow the next structure:
       username = username@example.org
       password = MyPa5sWoRd
 
-This repository sets quotas and limitations for the downloads, and you could be temporally blocked after a few unsuccessful pushes (for instance, trying to retrieve FRP data that is not avaialable yet, with a too low --waiting-time). If you plan to use this tool for operational purposes, we strongly recommend you to have a backup user/password.
+This repository sets quotas and limitations for the downloads, and you could be temporally blocked after a few unsuccessful pushes (for instance, trying to retrieve FRP data that is not available yet, with a too low --waiting-time). If you plan to use this tool for operational purposes, we strongly recommend you to have a backup user/password.
     
 Note that FRP from MTG is in its demonstration phase, and is thus not fully operational (See "https://lsa-saf.eumetsat.int/en/data/products/fire-products/").
 Note that the FRP product is available since 20250101. If your request starts prior to that date, you will get an error.
