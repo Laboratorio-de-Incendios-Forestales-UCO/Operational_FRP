@@ -44,23 +44,23 @@ If you define a name that already exists, the results will be attached to the en
     
 ## Requirements:
 
-  Python 3.12.9 with:
-    - datetime
-    - pathlib
-    - shapely
-    - argparse
-    - configparser
-    - contextily
-    - csv
-    - geopandas
-    - matplotlib
-    - os
-    - pandas
-    - pyproj
-    - requests
-    - time
-    - sys
-    -winsound
+Python 3.12.9 with:
+  - datetime
+  - pathlib
+  - shapely
+  - argparse
+  - configparser
+  - contextily
+  - csv
+  - geopandas
+  - matplotlib
+  - os
+  - pandas
+  - pyproj
+  - requests
+  - time
+  - sys
+  - winsound
 
 # LICENSE
 © 2026 Laboratorio de Incendios Forestales (UCO) ["https://labif.es/"]
