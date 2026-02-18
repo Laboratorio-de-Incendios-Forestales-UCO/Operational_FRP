@@ -66,3 +66,5 @@ Python 3.12.9 with:
 This repository is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
 Commercial use is not permitted.
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+This software has been developped in the framework of the Firepoctep+ project, co-financed by the European Union through the European Regional Development Fund (ERDF), within  the framework of the Interreg VI-A  Spain-Portugal Cross-Border Cooperation Programme 2021-2027 (POCTEP).
