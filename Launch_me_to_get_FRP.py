@@ -56,6 +56,8 @@ print("         Import the libraries")
 from datetime import datetime as datetime
 from datetime import timedelta as timedelta
 from datetime import timezone as timezone
+from IPython.display import display as display
+from IPython.display import clear_output as clear_output
 from pathlib import Path as Path
 from shapely.geometry import box as box
 
@@ -537,8 +539,8 @@ def f_plot_results(route_to_save_file, name_of_the_file, fig, ax, line):
     ax.relim()
     ax.autoscale_view()
 
-    fig.canvas.draw()
-    fig.canvas.flush_events()
+    clear_output(wait=True)
+    display(fig)
 
     return fig, ax, line
     
@@ -621,4 +623,5 @@ def main():
     
 # %% RING BELL
 if __name__ == "__main__":
+
     main()
