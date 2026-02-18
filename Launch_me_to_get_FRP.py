@@ -2,8 +2,11 @@
 print(
 """
 TRACKING:
-    Product developped by LABIF-UCO ("https://labif.es/").
+    https://doi.org/10.5281/zenodo.18681165
+    Product developped by LABIF-UCO ("https://labif.es/") [License: CC BY-NC 4.0].
     Version 20260217b (last modified by Juanan).
+
+    This software has been developped in the framework of the Firepoctep+ project, co-financed by the European Union through the European Regional Development Fund (ERDF), within the framework of the Interreg VI-A Spain-Portugal Cross-Border Cooperation Programme 2021-2027 (POCTEP).
     
 OBJECTIVE:
     Get the Fire Radiative Power detected by the Flexible Combined Imager sensor onboard Meteosat Third Generation satellite in Near Real Time.
@@ -625,3 +628,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
