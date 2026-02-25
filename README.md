@@ -31,8 +31,8 @@ The directory must contain a ".credentials.ini" file with your credentials to lo
 This file must follow the next structure:
         
       [gitlab]
-      username = username@example.org
-      password = MyPa5sWoRd
+      username=username
+      password=MyPa5sWoRd
 
 This repository sets quotas and limitations for the downloads, and you could be temporally blocked after a few unsuccessful pushes (for instance, trying to retrieve FRP data that is not available yet, with a too low --waiting-time). If you plan to use this tool for operational purposes, we strongly recommend you to have a backup user/password.
     
