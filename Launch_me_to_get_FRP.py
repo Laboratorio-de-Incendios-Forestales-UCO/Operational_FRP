@@ -4,7 +4,7 @@ print(
 TRACKING:
     https://doi.org/10.5281/zenodo.18681165
     Product developped by LABIF-UCO ("https://labif.es/") [License: CC BY-NC 4.0].
-    Version 20260217b (last modified by Juanan).
+    Version 20260225a (last modified by Juanan).
 
     This software has been developped in the framework of the Firepoctep+ project, co-financed by the European Union through the European Regional Development Fund (ERDF), within the framework of the Interreg VI-A Spain-Portugal Cross-Border Cooperation Programme 2021-2027 (POCTEP).
     
@@ -134,35 +134,35 @@ def f_parser():
         "--north",
         type=float,
         required=True,
-        help="North latitude in decimal degrees (float)"
+        help="North latitude in decimal degrees (e.g. 43.18) (float)"
     )
 
     parser.add_argument(
         "--south",
         type=float,
         required=True,
-        help="South latitude in decimal degrees (float)"
+        help="South latitude in decimal degrees (e.g. 43.12) (float)"
     )
 
     parser.add_argument(
         "--east",
         type=float,
         required=True,
-        help="East longitude in decimal degrees (float)"
+        help="East longitude in decimal degrees (e.g. -5.72) (float)"
     )
 
     parser.add_argument(
         "--west",
         type=float,
         required=True,
-        help="West longitude in decimal degrees (float)"
+        help="West longitude in decimal degrees (e.g. -5.82) (float)"
     )
 
     parser.add_argument(
         "--start",
         type=f_valid_datetime_tz,
         required=True,
-        help="Start datetime in ISO 8601 format with time zone (e.g.: 2024-01-01T14:30:00+02:00)"
+        help="Start datetime in ISO 8601 format with time zone (e.g.: 2024-01-01T14:30:00+02:00 or 2024-01-01T02:30:00Z)"
     )
     
     parser.add_argument(
@@ -170,7 +170,7 @@ def f_parser():
         type=f_valid_datetime_tz,
         required=False,
         default=None,
-        help="End datetime in ISO 8601 format with time zone (e.g.: 2024-01-01T16:30:00+02:00)"
+        help="End datetime in ISO 8601 format with time zone (e.g.: 2024-01-01T16:30:00+02:00 or 2024-01-01T14:30:00Z)"
     )
     
     parser.add_argument(
@@ -363,20 +363,6 @@ def f_define_the_filename(datetime):
    
     return link_to_download_file, filename
 
-# def f_get_password(user, password):
-    
-#         # Load env variables
-#         dotenv.load_dotenv()  
-        
-#         # Read env variables
-#         _user = os.getenv(user)
-#         _password = os.getenv(password)
-        
-#         if not _user or not _password:
-#             raise RuntimeError("User and/or password cannot be found")
-        
-#         return _user, _password
-
 
 def f_get_credentials(filename=".credentials.ini"):
     # Get credentials from an ini file located in the same directory than the script
@@ -534,10 +520,20 @@ def f_plot_results(route_to_save_file, name_of_the_file, fig, ax, line):
         ax.grid(True)
         ax.set_xlabel(col_datetime)
         ax.set_ylabel(col_value)
-        ax.xaxis.set_major_locator(mdates.MinuteLocator(byminute=[0, 10, 20, 30, 40, 50]))
+        # To force xaxis every 10 min:
+        # ax.xaxis.set_major_locator(mdates.MinuteLocator(byminute=[0, 10, 20, 30, 40, 50]))
+        # Adjustable xaxis:
+        locator = mdates.AutoDateLocator(minticks=4, maxticks=10)
+        formatter = mdates.ConciseDateFormatter(locator)
+
+        ax.xaxis.set_major_locator(locator)
+        ax.xaxis.set_major_formatter(formatter)
+        #---------
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m-%d %H:%M"))
         fig.autofmt_xdate()
         fig.suptitle(name_of_the_file)
+        
+
 
     ax.relim()
     ax.autoscale_view()
